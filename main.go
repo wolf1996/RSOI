@@ -3,6 +3,7 @@ package main
 import (
 	"net/http"
 	"fmt"
+	"log"
 )
 
 func helloWorldHandler(w http.ResponseWriter, r *http.Request) {
@@ -13,5 +14,5 @@ func helloWorldHandler(w http.ResponseWriter, r *http.Request) {
 func main(){
 	mux := http.NewServeMux()
 	mux.HandleFunc("/", helloWorldHandler)
-	http.ListenAndServe("0.0.0.0:80", mux)
+	log.Fatal(http.ListenAndServe("0.0.0.0:80", mux))
 }
