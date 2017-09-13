@@ -1,13 +1,13 @@
 package main
 
 import (
-	"testing"
-	"net/http/httptest"
 	"net/http"
+	"net/http/httptest"
+	"testing"
 )
 
-func TestHelloHandler( t *testing.T)  {
-	req, err := http.NewRequest("GET","/",nil )
+func TestHelloHandler(t *testing.T) {
+	req, err := http.NewRequest("GET", "/", nil)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -20,7 +20,7 @@ func TestHelloHandler( t *testing.T)  {
 	}
 
 	// Check the response body is what we expect.
-	expected := "Hello World"
+	expected := "Hello World1"
 	if rec.Body.String() != expected {
 		t.Errorf("handler returned unexpected body: got %v want %v",
 			rec.Body.String(), expected)
